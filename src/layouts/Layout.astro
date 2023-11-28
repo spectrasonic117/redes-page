@@ -1,0 +1,118 @@
+---
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+
+import 'normalizecss/normalize.css';
+---
+
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='description' content={description} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div
+			class='relative flex flex-col h-[100vh] items-center justify-center bg-black transition-bg'>
+			<div class='absolute inset-0 overflow-hidden'>
+				<div class='jumbo absolute -inset-[10px] opacity-50'></div>
+			</div>
+			<slot />
+			<!-- <h1
+        class='relative flex items-center text-5xl font-bold text-white opacity-80 transition-colors'
+      >
+        Spectrasonic
+      </h1> -->
+		</div>
+	</body>
+</html>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+	body {
+		height: auto;
+		font-family: Inter, sans-serif;
+		background: black;
+	}
+
+	@keyframes jumbo {
+		from {
+			background-position:
+				50% 50%,
+				50% 50%;
+		}
+		to {
+			background-position:
+				350% 50%,
+				350% 50%;
+		}
+	}
+
+	.jumbo {
+		--stripesDark: repeating-linear-gradient(
+			100deg,
+			#fff 0%,
+			#fff 7%,
+			transparent 10%,
+			transparent 12%,
+			#fff 16%
+		);
+		--stripes: repeating-linear-gradient(
+			100deg,
+			#000 0%,
+			#000 7%,
+			transparent 10%,
+			transparent 12%,
+			#000 16%
+		);
+		--rainbow: repeating-linear-gradient(
+			100deg,
+			#60a5fa 10%,
+			#e879f9 15%,
+			#60a5fa 20%,
+			#5eead4 25%,
+			#60a5fa 30%
+		);
+		background-image: var(--stripes), var(--rainbow);
+		background-size: 300%, 200%;
+		background-position:
+			50% 50%,
+			50% 50%;
+
+		filter: blur(10px) invert(0%);
+
+		mask-image: radial-gradient(
+			ellipse at 100% 0%,
+			black 40%,
+			transparent 70%
+		);
+
+		pointer-events: none;
+	}
+
+	.jumbo::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image: var(--stripes), var(--rainbow);
+		background-size: 200%, 100%;
+		animation: jumbo 60s linear infinite;
+		background-attachment: fixed;
+		mix-blend-mode: difference;
+	}
+
+	.dark .jumbo {
+		background-image: var(--stripesDark), var(--rainbow);
+		filter: blur(10px) opacity(100%) saturate(100%);
+	}
+	.dark .jumbo::after {
+		background-image: var(--stripesDark), var(--rainbow);
+	}
+</style>
