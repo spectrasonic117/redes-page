@@ -12,7 +12,17 @@
 		href='#'
 		class='px-4 py-2 bg-rose-600 hover:bg-rose-900 rounded-md'>Portfolio</a
 	>
-	<h2 class=''>Code with Love by Spectrasonic</h2>
+	<h2 class='flex'>
+		<img
+			id='copybutton'
+			onclick='copycommand()'
+			class='mx-1'
+			src='code.svg'
+		/> with <img class='mx-1' src='heart.svg' /> by <span
+			class='font-bold mx-1'>
+			Spectrasonic</span
+		>
+	</h2>
 </section>
 
 <style>
@@ -20,3 +30,19 @@
 		grid-area: profile;
 	}
 </style>
+
+<script is:inline>
+	// const copybutton = document.querySelector('img #copybutton');
+	const command =
+		'bash -c "$(curl -fsSL https://gitlab.com/Spectrasonic/dotfiles/-/raw/master/Scripts/configure_ssh.sh)"';
+	// copybutton.addEventListener('click', () => {
+	// 	console.log('clicked');
+	// 	navigator.clipboard.writeText(command);
+	// 	alert('Copied to clipboard!');
+	// });
+
+	function copycommand() {
+		navigator.clipboard.writeText(command);
+		alert('¯\\_(ツ)_/¯');
+	}
+</script>
