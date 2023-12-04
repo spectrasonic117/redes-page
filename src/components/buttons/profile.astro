@@ -32,16 +32,9 @@
 </style>
 
 <script is:inline>
-	// const copybutton = document.querySelector('img #copybutton');
-	const command =
+	let command =
 		'bash -c "$(curl -fsSL https://gitlab.com/Spectrasonic/dotfiles/-/raw/master/Scripts/configure_ssh.sh)"';
-	// copybutton.addEventListener('click', () => {
-	// 	console.log('clicked');
-	// 	navigator.clipboard.writeText(command);
-	// 	alert('Copied to clipboard!');
-	// });
-
-	function copycommand() {
+	function copycommand(command) {
 		navigator.clipboard.writeText(command);
 		alert('¯\\_(ツ)_/¯');
 	}
