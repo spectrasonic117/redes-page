@@ -1,0 +1,20 @@
+---
+interface Props {
+	href: string;
+	source_image: string;
+	alt_image: string;
+	grid_area: string;
+	classes: string;
+}
+
+const { href, source_image, alt_image, grid_area, classes } = Astro.props;
+---
+
+<a
+	class='network_button'
+	href={href}
+	class={classes}
+	target='_blank'
+	style='grid-area: + ${grid_area}; border-radius: 10px;'>
+	<img src={source_image} alt={alt_image} />
+</a>
