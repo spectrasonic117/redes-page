@@ -19,15 +19,21 @@ import 'normalizecss/normalize.css';
 	</head>
 	<body>
 		<div
-			class='relative flex flex-col h-[100vh] items-center justify-center bg-black transition-bg'>
+			class='relative flex flex-col h-full items-center justify-center p-10 bg-black transition-bg'>
 			<div class='absolute inset-0 overflow-hidden'>
-				<div class='jumbo absolute -inset-[10px] opacity-50'></div>
+				<div class='jumbo absolute inset-[10px] opacity-50'></div>
 			</div>
 			<slot />
 		</div>
 	</body>
 </html>
 
+<style>
+	body {
+		background: black;
+	}
+</style>
+<!-- 
 <style>
 	body {
 		background: black;
@@ -106,4 +112,4 @@ import 'normalizecss/normalize.css';
 	.dark .jumbo::after {
 		background-image: var(--stripesDark), var(--rainbow);
 	}
-</style>
+</style> -->

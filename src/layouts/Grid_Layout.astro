@@ -10,7 +10,7 @@ import Github from '../components/buttons/github.astro';
 ---
 
 <div
-	class='container rounded-[20px] md:border-4 md:border-white gap-[10px] p-[10px] z-10 overflow-hidden grid grid-flow-row backdrop-blur-[50px] w-[1400px] h-[800px] sm:border-0 sm:grid-flow-col sm:gap-[10px]'>
+	class='container rounded-[20px] md:border-4 md:border-white gap-4 p-[10px] z-50 overflow-hidden grid grid-flow-row w-full h-full sm:border-0 sm:grid-flow-col sm:gap-4 sm:grid-flow-column'>
 	<Profile />
 	<Servers />
 	<Twitter />
@@ -31,15 +31,21 @@ import Github from '../components/buttons/github.astro';
 			'profile instagram gitlab Github';
 	}
 
-	@media (max-width: 425px) {
+	@media screen and (width: <= 425px) {
 		.container {
+			width: 425px;
 			grid-template-columns: 1fr;
 			grid-template-rows: 1fr;
 			grid-template-areas:
 				'profile'
 				'Servers'
+				'Servers'
+				'discord'
+				'profile'
 				'twitter'
 				'twitch'
+				'Github'
+				'profile'
 				'instagram'
 				'gitlab'
 				'Github';

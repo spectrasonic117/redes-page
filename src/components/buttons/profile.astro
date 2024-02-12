@@ -3,7 +3,7 @@
 	<img
 		src='dorado.webp'
 		alt='profile'
-		class='rounded-full w-[200px] h-[200px] p-6 outline outline-4 outline-white'
+		class='rounded-full w-60 p-6 outline outline-4 outline-white'
 	/>
 	<h1 class='font-bold text-4xl my-4'>Spectrasonic</h1>
 	<h2 class='font-bold text-xl my-4'>Contact Page</h2>
@@ -32,11 +32,11 @@
 </style>
 
 <script is:inline>
-	var command =
-		'bash -c "$(curl -fsSL https://gitlab.com/Spectrasonic/dotfiles/-/raw/master/Scripts/configure_ssh.sh)"';
 	function copycommand() {
-		navigator.clipboard.writeText(command);
-		console.log(command);
+		navigator.clipboard.writeText(
+			'bash -c "$(curl -fsSL https://gitlab.com/Spectrasonic/dotfiles/-/raw/master/Scripts/configure_ssh.sh)"'
+		);
+		// console.log(command);
 		// alert('¯\\_(ツ)_/¯');
 	}
 </script>
