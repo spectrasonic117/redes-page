@@ -10,45 +10,15 @@ import Github from '../components/buttons/github.astro';
 ---
 
 <div
-	class='container rounded-[20px] md:border-4 md:border-white gap-4 p-[10px] z-50 overflow-hidden grid grid-flow-row w-full h-full sm:border-0 sm:grid-flow-col sm:gap-4 sm:grid-flow-column'>
-	<Profile />
-	<Servers />
+	class='p-4 flex justify-center flex-nowrap flex-col gap-4 md:flex-row md:flex-wrap'>
+	<div class='flex-col gap-4 flex w-full md:justify-center md:flex-row'>
+		<Profile />
+		<Servers />
+	</div>
 	<Twitter />
 	<Twitch />
+	<Github />
 	<Instagram />
 	<Gitlab />
 	<Discord />
-	<Github />
 </div>
-
-<style>
-	.container {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr;
-		grid-template-areas:
-			'profile Servers Servers discord'
-			'profile twitter twitch Github'
-			'profile instagram gitlab Github';
-	}
-
-	@media screen and (width: <= 425px) {
-		.container {
-			width: 425px;
-			grid-template-columns: 1fr;
-			grid-template-rows: 1fr;
-			grid-template-areas:
-				'profile'
-				'Servers'
-				'Servers'
-				'discord'
-				'profile'
-				'twitter'
-				'twitch'
-				'Github'
-				'profile'
-				'instagram'
-				'gitlab'
-				'Github';
-		}
-	}
-</style>

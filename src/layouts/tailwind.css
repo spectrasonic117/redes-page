@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.test {
+		@apply border-[#ff0000] border-dotted border-2;
+	}
+
+	.red-component {
+		@apply p-10 text-white rounded-[10px] flex flex-col justify-center items-center transition border-4;
+	}
+
+	.logo-size {
+		@apply w-[100px] h-[100px];
+	}
+}
