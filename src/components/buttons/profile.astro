@@ -1,5 +1,4 @@
-<section5
-	class='red-component profile bg-black/20 text-white border-[#5d5d5d] w-full md:w-[50%]'>
+<section class='profile red-component bg-black/20 text-white border-[#5d5d5d]'>
 	<img
 		src='dorado.webp'
 		alt='profile'
@@ -23,11 +22,17 @@
 			Spectrasonic</span
 		>
 	</h2>
-</section5>
+</section>
 
 <style>
 	.profile {
-		grid-area: profile;
+		grid-area: 1 / 1 / 4 / 2;
+	}
+
+	@media screen (width: 425px) {
+		.profile {
+			grid-area: 1 / 1 / 2 / 2;
+		}
 	}
 </style>
 

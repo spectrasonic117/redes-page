@@ -8,7 +8,7 @@
 	}
 
 	.red-component {
-		@apply p-10 text-white rounded-[10px] flex flex-col justify-center items-center transition border-4;
+		@apply p-10 text-white rounded-[10px] transition border-4 w-full flex flex-col justify-center items-center;
 	}
 
 	.logo-size {

@@ -1,7 +1,7 @@
 <a
 	href='#'
 	target='_blank'
-	class='red-component Servers bg-slate-950/20 hover:bg-slate-500/40 border-slate-500 w-full md:w-[50%]'>
+	class='red-component servers bg-slate-950/20 hover:bg-slate-500/40 border-slate-500'>
 	<img
 		src='iso_white.svg'
 		alt='Nine Block Studio Logo'
@@ -12,11 +12,14 @@
 	</h1>
 </a>
 <style>
-	.Servers {
-		grid-area: Servers;
+	.servers {
+		grid-area: 1 / 2 / 2 / 4;
+		text-wrap: pretty;
 	}
 
-	.tex-pretty {
-		text-wrap: pretty;
+	@media screen (max-width: 425px) {
+		.servers {
+			grid-area: 2 / 1 / 3 / 2;
+		}
 	}
 </style>
