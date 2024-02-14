@@ -9,7 +9,7 @@ import Discord from '../components/buttons/discord.astro';
 import Github from '../components/buttons/github.astro';
 ---
 
-<header class='net_grid p-10 h-full'>
+<header class='h-full gap-4 sm:flex md:grid net_grid sm:flex-col'>
 	<Profile />
 	<Servers />
 	<Twitter />
@@ -20,18 +20,9 @@ import Github from '../components/buttons/github.astro';
 	<Discord />
 </header>
 
-<style>
+<!-- <style>
 	.net_grid {
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		grid-template-rows: repeat(3, 1fr);
-		gap: 1em;
+		/* grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(3, 1fr); */
 	}
-
-	@media screen (min-width: 320px) and (max-width: 425px) {
-		.net_grid {
-			grid-template-columns: 1fr;
-			grid-template-rows: repeat(8, 1fr);
-		}
-	}
-</style>
+</style> -->
