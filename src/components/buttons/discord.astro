@@ -1,4 +1,5 @@
 <section
+	id='discord-button'
 	class='red-component discord bg-indigo-950/20 hover:bg-indigo-700/40 border-indigo-700'>
 	<img src='discord.svg' alt='discord' class='logo-size' />
 </section>
@@ -9,7 +10,8 @@
 </style>
 
 <script lang='ts'>
-	onclick = () => {
+	const discord = document.querySelector('#discord-button');
+	discord.onclick = () => {
 		alert('Discord Userneme: spectrasonic117');
 	};
 </script>
